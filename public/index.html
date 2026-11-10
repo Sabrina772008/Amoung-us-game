@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Star Beans</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="lobby" class="screen">
+    <h1>Star Beans</h1>
+    <div id="joinForm">
+      <input type="text" id="playerName" placeholder="Your Name" maxlength="12">
+      <div id="colorPicker"></div>
+      <div id="hatPicker"></div>
+      <button id="createBtn">Create Room</button>
+      <div class="join-row">
+        <input type="text" id="roomCodeInput" placeholder="Room Code" maxlength="6">
+        <button id="joinBtn">Join Room</button>
+      </div>
+    </div>
+    <div id="roomInfo" style="display:none;">
+      <h2>Room: <span id="roomCodeDisplay"></span></h2>
+      <button id="copyCodeBtn">Copy Code</button>
+      <ul id="playerList"></ul>
+      <button id="startBtn" style="display:none;">Start Game</button>
+    </div>
+  </div>
+
+  <div id="game" class="screen" style="display:none;">
+    <canvas id="gameCanvas"></canvas>
+    <div id="joystick"></div>
+    <div id="actions">
+      <button id="useBtn" class="action-btn">Use</button>
+      <button id="reportBtn" class="action-btn">Report</button>
+      <button id="emergencyBtn" class="action-btn">Meeting</button>
+      <button id="killBtn" class="action-btn" style="display:none;">Kill</button>
+    </div>
+    <div id="taskBar"><div id="taskProgress"></div></div>
+  </div>
+
+  <div id="meeting" class="screen" style="display:none;">
+    <h2>Emergency Meeting</h2>
+    <div id="meetingPlayers"></div>
+    <button id="skipVoteBtn">Skip Vote</button>
+    <div id="voiceControls">
+      <button id="muteBtn">Mute</button>
+      <button id="unmuteBtn" style="display:none;">Unmute</button>
+    </div>
+  </div>
+
+  <div id="endScreen" class="screen" style="display:none;">
+    <h1 id="winnerText"></h1>
+    <button id="playAgainBtn">Play Again</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
