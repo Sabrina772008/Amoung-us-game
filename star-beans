@@ -1,0 +1,12 @@
+star-beans/
+├── package.json
+├── server.js
+└── public/
+    ├── index.html
+    ├── css/
+    │   └── style.css
+    └── js/
+        ├── art.js
+        ├── game.js
+        ├── voice.js
+        └── main.js
